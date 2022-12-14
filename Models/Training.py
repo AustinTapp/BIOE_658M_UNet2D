@@ -5,7 +5,7 @@ from pytorch_lightning import LightningModule
 import torch
 
 class UNet_Train(LightningModule):
-    def __init__(self, img_size=(1, 3, 96, 96), batch_size=8, lr=1e-4):
+    def __init__(self, img_size=(1, 3, 96, 96), batch_size=8, lr=1e-3):
         super().__init__()
 
         self.save_hyperparameters()
@@ -34,7 +34,7 @@ class UNet_Train(LightningModule):
     #    return self(batch['image'])
 
     def configure_optimizers(self):
-        optimizer = torch.optim.AdamW(self.parameters(), lr=self.hparams.lr)
+        optimizer = torch.optim.Adam(self.parameters(), lr=self.hparams.lr)
         return optimizer
 
     def _prepare_batch(self, batch):
