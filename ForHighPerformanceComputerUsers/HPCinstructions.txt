@@ -1,0 +1,20 @@
+Log in to an HPC cluster
+Move your folder containing all python scripts and data onto the HPC cluster
+run the following commands in a SSH:
+    enable_lmod
+    module load container_env python3
+    mkdir -p ~/envs
+
+substitute your information for the ALL_CAPS words, the run the commands:
+    crun -c -p ~/envs/PROJECT_NAME
+    crun -p ~/envs/PROJECT_NAME  pip install PACKAGE_NAME
+
+cd to your uploded folder directory
+create a job script (see job.txt)
+be sure the script extension is ".sh"
+
+run:
+    sbatch job.sh
+
+check the job's status with:
+    squeue -u YOUR_HPC_USERNAME

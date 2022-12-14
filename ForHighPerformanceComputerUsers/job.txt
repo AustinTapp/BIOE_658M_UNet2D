@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#SBATCH -c 4
+#SBATCH -p gpu
+#SBATCH --gres gpu:1
+
+enable_lmod
+module load container_env python3
+
+export CRUN_PYTHONPATH=~/PROJECT_DIRECTORY/
+
+crun.python3 -p ~/envs/PROJECT_NAME python main.py
