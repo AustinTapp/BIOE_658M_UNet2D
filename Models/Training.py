@@ -5,7 +5,7 @@ from pytorch_lightning import LightningModule
 import torch
 
 class UNet_Train(LightningModule):
-    def __init__(self, img_size=(1, 3, 96, 96), batch_size=8, lr=1e-3):
+    def __init__(self, img_size=(1, 3, 96, 96), batch_size=8, lr=1e-4):
         super().__init__()
 
         self.save_hyperparameters()
