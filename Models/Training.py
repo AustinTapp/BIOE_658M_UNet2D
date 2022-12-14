@@ -34,7 +34,7 @@ class UNet_Train(LightningModule):
     #    return self(batch['image'])
 
     def configure_optimizers(self):
-        optimizer = torch.optim.Adam(self.parameters(), lr=self.hparams.lr)
+        optimizer = torch.optim.AdamW(self.parameters(), lr=self.hparams.lr)
         return optimizer
 
     def _prepare_batch(self, batch):

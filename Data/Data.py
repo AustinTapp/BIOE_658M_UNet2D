@@ -16,7 +16,7 @@ from monai.transforms import (
 
 class ImageData(Dataset):
     def __init__(self):
-        self.dataset_path = "C:\\Users\\Austin Tapp\\Documents\\AMB\\NNandDL\\2DUNet_project\\Data\\Dataset_BUSI\\"
+        self.dataset_path = "C:\\Users\\Austin Tapp\\Documents\\AMB\\NNandDL\\2DUNet_project\\Data\\Dataset_BUSI"
         self.raw_images_path = glob.glob(os.path.join(self.dataset_path + '\\images\\*'))
         self.segmentation_path = glob.glob(os.path.join(self.dataset_path + '\\masks\\*'))
 
